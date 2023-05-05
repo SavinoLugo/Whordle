@@ -1,0 +1,23 @@
+Set up words to be used as the word to be guessed, need to be 5 letters in length.
+Let words = ['eager', 'dizzy', 'seize', 'eager', 'earth', 'stone']
+
+Need to set up a selector to randomly choose from the words
+
+Setup a way to iterate through the boxes on the 6x5 grid.
+
+Make it so the user can input letters on the boxes in the grid.
+
+Find a way to check if the users input was correct or incorrect.
+
+If letter belongs change box to yellow, if wrong leave as same color, if correct letter in correct position turn green.
+
+Only allow 6 tries to get the answer. 
+
+Win if right ansswer is input  
+
+If by 6th try there is not a correct answer. End Game  
+
+Implement restart/clear button.
+
+Add keyboard input  
+
