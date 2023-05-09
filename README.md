@@ -28,7 +28,7 @@ Step five: Polish the HTML/CSS
 
 ## Credits
 
-Source:
+Source: I heavily refrenced this video https://www.youtube.com/watch?v=j7OhcuZQ-q8 by Ian Lenehan and I learned some really cool things from him while building this game.
 
 Source:
 

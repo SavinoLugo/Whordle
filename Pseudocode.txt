@@ -13,7 +13,7 @@ If letter belongs change box to yellow, if wrong leave as same color, if correct
 
 Only allow 6 tries to get the answer. 
 
-Win if right ansswer is input  
+Win if right answer is input  
 
 If by 6th try there is not a correct answer. End Game  
 
@@ -21,3 +21,4 @@ Implement restart/clear button.
 
 Add keyboard input  
 
+string methods

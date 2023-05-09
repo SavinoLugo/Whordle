@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #121214;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 8vmin;
+  color: white;
+  letter-spacing: 1vmin;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: -275px;
+  margin-bottom: 30px;
+}
+
+
+section.gameboard {
+  display: grid;
+  grid-template-columns: repeat(5, 48px);
+  grid-template-rows: repeat(6, 48px);
+  justify-content: center;
+  gap: 5px;
+}
+
+section.gameboard > div {
+  border: 2px solid #3a3a3b;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a3a3b; 
+}
+
+section.gameboard > div.guessed {
+  background-color: yellow;
+  color: black;
+}
+
+section.gameboard > div.correct {
+  background-color: green;
+}
+
+section.gameboard > div.incorrect {
+  background-color: #3a3a3b;
+}
