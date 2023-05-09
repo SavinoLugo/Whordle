@@ -50,15 +50,9 @@ const updateCells = () => {
     } else {
       cell.classList.remove('current')
     }
-    if (currentWord[index]) {
-      cell.classList.add('guessed')
-    } else {
-      cell.classList.remove('guessed')
-    }
-    cell.classList.remove('correct', 'incorrect')
+    cell.textContent = currentWord[index] || ''
   })
 }
-
 //This portion below handles the input from a keyboard.
 const handleKeyDown = (event) => {
   if (event.key === 'Backspace') {

@@ -41,15 +41,3 @@ section.gameboard > div {
   background-color: #3a3a3b; 
 }
 
-section.gameboard > div.guessed {
-  background-color: yellow;
-  color: black;
-}
-
-section.gameboard > div.correct {
-  background-color: green;
-}
-
-section.gameboard > div.incorrect {
-  background-color: #3a3a3b;
-}
