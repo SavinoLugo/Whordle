@@ -34,6 +34,7 @@ let currentRow = 0
 let currentCellIndex = 0
 let wordToGuess
 let currentGuess = []
+let banana = 0
 
 const getRandomWord = () => {
   return wordList[Math.floor(Math.random() * wordList.length)]
@@ -48,17 +49,27 @@ const addLetterToCurrentRow = (letter) => {
 
 const removeLastLetterFromCurrentRow = () => {
   currentGuess.pop()
+  if (currentCellIndex !== 0) {
+    currentCellIndex--
+  }
   updateCells()
 }
 
 const updateCells = () => {
+  const gameboard = document.querySelectorAll('.cell')
+  gameboard[currentGuess.length - 1 + banana].textContent =
+    currentGuess[currentGuess.length - 1]
+  console.log(currentGuess)
+}
+
+const createGameBoard = () => {
   const gameboard = document.querySelector('.gameboard')
   gameboard.innerHTML = ''
-
   for (let i = 0; i < cellsPerRow; i++) {
     const cell = document.createElement('div')
     const rowIndex = Math.floor(i / cellCount)
     const guess = rowIndex === currentRow ? currentGuess[i % cellCount] : ''
+    cell.classList = 'cell'
     cell.classList.toggle(
       'current',
       rowIndex === currentRow && i % cellCount === currentCellIndex
@@ -67,7 +78,7 @@ const updateCells = () => {
     gameboard.appendChild(cell)
   }
 }
-
+createGameBoard()
 const handleKeyDown = (event) => {
   if (event.key === 'Backspace') {
     removeLastLetterFromCurrentRow()
@@ -82,8 +93,12 @@ const moveToNextRow = () => {
   guesses.push(currentGuess)
   currentCellIndex = 0
   currentRow++
+  banana += 5
+  if (currentRow >= rowCount) {
+    currentRow = 0
+  }
   currentGuess = []
-  updateCells()
+  // updateCells()
 }
 
 const handleEnterKeyPress = (event) => {
@@ -96,5 +111,3 @@ wordToGuess = getRandomWord()
 
 document.addEventListener('keydown', handleKeyDown)
 document.addEventListener('keydown', handleEnterKeyPress)
-
-updateCells()
