@@ -1,6 +1,6 @@
-const cells = document.querySelectorAll('.cell')
-let currentCellIndex = 0
-let currentWord = ''
+const cellCount = 5
+const rowCount = 6
+const cellsPerRow = cellCount * rowCount
 const wordList = [
   'apple',
   'beach',
@@ -29,39 +29,72 @@ const wordList = [
   'yield',
   'zebra'
 ]
-let wordToGuess = wordList[Math.floor(Math.random() * wordList.length)]
-//Adds the letters to board when they are typed.
-const addLetterToWord = (letter) => {
-  if (currentWord.length < 5) {
-    currentWord += letter
+const guesses = []
+let currentRow = 0
+let currentCellIndex = 0
+let wordToGuess
+let currentGuess = []
+
+const getRandomWord = () => {
+  return wordList[Math.floor(Math.random() * wordList.length)]
+}
+
+const addLetterToCurrentRow = (letter) => {
+  if (currentGuess.length < cellCount) {
+    currentGuess[currentCellIndex] = letter.toUpperCase()
     updateCells()
   }
 }
-//Used to delete letters from a row.
-const removeLastLetterFromWord = () => {
-  currentWord = currentWord.slice(0, -1)
+
+const removeLastLetterFromCurrentRow = () => {
+  currentGuess.pop()
   updateCells()
 }
-//Updates the visuals of the board each time something happens.
+
 const updateCells = () => {
-  cells.forEach((cell, index) => {
-    if (index === currentCellIndex) {
-      cell.classList.add('current')
-    } else {
-      cell.classList.remove('current')
-    }
-    cell.textContent = currentWord[index] || ''
-  })
-}
-//This portion below handles the input from a keyboard.
-const handleKeyDown = (event) => {
-  if (event.key === 'Backspace') {
-    removeLastLetterFromWord()
-  } else if (event.key.length === 1 && /[a-z]/i.test(event.key)) {
-    addLetterToWord(event.key.toUpperCase())
+  const gameboard = document.querySelector('.gameboard')
+  gameboard.innerHTML = ''
+
+  for (let i = 0; i < cellsPerRow; i++) {
+    const cell = document.createElement('div')
+    const rowIndex = Math.floor(i / cellCount)
+    const guess = rowIndex === currentRow ? currentGuess[i % cellCount] : ''
+    cell.classList.toggle(
+      'current',
+      rowIndex === currentRow && i % cellCount === currentCellIndex
+    )
+    cell.textContent = guess || ''
+    gameboard.appendChild(cell)
   }
 }
 
+const handleKeyDown = (event) => {
+  if (event.key === 'Backspace') {
+    removeLastLetterFromCurrentRow()
+  } else if (event.key.length === 1 && /[a-z]/i.test(event.key)) {
+    addLetterToCurrentRow(event.key)
+    currentCellIndex = (currentCellIndex + 1) % cellCount
+    updateCells()
+  }
+}
+
+const moveToNextRow = () => {
+  guesses.push(currentGuess)
+  currentCellIndex = 0
+  currentRow++
+  currentGuess = []
+  updateCells()
+}
+
+const handleEnterKeyPress = (event) => {
+  if (event.key === 'Enter') {
+    moveToNextRow()
+  }
+}
+
+wordToGuess = getRandomWord()
+
 document.addEventListener('keydown', handleKeyDown)
+document.addEventListener('keydown', handleEnterKeyPress)
 
 updateCells()
