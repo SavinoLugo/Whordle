@@ -91,6 +91,12 @@ const handleKeyDown = (event) => {
 
 const moveToNextRow = () => {
   guesses.push(currentGuess)
+  const isWin = checkIfCorrect()
+  if (isWin) {
+    console.log('Correct')
+  } else {
+    console.log('incorrect')
+  }
   currentCellIndex = 0
   currentRow++
   banana += 5
@@ -105,6 +111,11 @@ const handleEnterKeyPress = (event) => {
   if (event.key === 'Enter') {
     moveToNextRow()
   }
+}
+
+const checkIfCorrect = () => {
+  const guess = currentGuess.join('').toLowerCase()
+  return guess === wordToGuess
 }
 
 wordToGuess = getRandomWord()
