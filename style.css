@@ -11,6 +11,45 @@ body {
   justify-content: center;
 }
 
+a {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 75px;
+  text-decoration: none;
+  color: white;
+}
+p {
+  color: white;
+  position: center;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 30px;
+;
+}
+h1{
+  color: white;
+  text-align: center;
+  margin-bottom: -25px;
+}
+h2{
+  color: rgb(182, 70, 70);
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 30px;
+  margin-bottom: -20px;
+}
+h3{
+  color: rgb(182, 70, 70);
+  text-align: center;
+  margin-left: 350px;
+  margin-right: 350px;
+  font-size: 25px;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -44,4 +83,3 @@ section.gameboard > div {
 .correct-position {
   color: green;
 }
-
