@@ -11,7 +11,7 @@ body {
   justify-content: center;
 }
 
-a {
+a.game {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -19,7 +19,19 @@ a {
   font-size: 75px;
   text-decoration: none;
   color: white;
+  font-family: 'Architects Daughter', cursive;
 }
+a.facts {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 75px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Kalam', cursive;
+}
+
 p {
   color: white;
   position: center;
@@ -55,7 +67,7 @@ header {
   font-size: 8vmin;
   color: white;
   letter-spacing: 1vmin;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Bruno Ace SC', cursive;
   margin-top: -275px;
   margin-bottom: 30px;
 }
@@ -90,7 +102,7 @@ button{
   border-radius: 4vmin;
   border: 0.1vmin solid rgb(156, 20, 20);
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-family: 'Amatic SC', cursive;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
