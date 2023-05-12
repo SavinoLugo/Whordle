@@ -9,6 +9,9 @@ Created by: Savino Lugo
 ## Description:
 
 A web browser word guessing game based off of The NYTime's game "_Wordle_".
+In this game you have six tries to guess the corret word.
+The words are only five letters long.
+The only hints are that correct letters turn green.
 
 ---
 
