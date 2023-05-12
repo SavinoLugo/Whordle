@@ -59,9 +59,21 @@ const updateCells = () => {
   const gameboard = document.querySelectorAll('.cell')
   gameboard[currentGuess.length - 1 + banana].textContent =
     currentGuess[currentGuess.length - 1]
-  console.log(currentGuess)
 }
-
+const checkWin = () => {
+  const newArr = wordToGuess.split('')
+  const gameboard = document.querySelectorAll('.cell')
+  newArr.forEach((word, idx) => {
+    const fWord = word.toUpperCase()
+    console.log(fWord)
+    console.log(
+      gameboard[currentGuess.length - 1 + banana].textContent === fWord
+    )
+    if (gameboard[idx + banana].textContent === fWord) {
+      gameboard[idx + banana].style.background = 'green'
+    }
+  })
+}
 const createGameBoard = () => {
   const gameboard = document.querySelector('.gameboard')
   gameboard.innerHTML = ''
@@ -114,6 +126,7 @@ const handleEnterKeyPress = (event) => {
 }
 
 const checkIfCorrect = () => {
+  checkWin()
   const guess = currentGuess.join('').toLowerCase()
   return guess === wordToGuess
 }

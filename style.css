@@ -41,5 +41,11 @@ section.gameboard > div {
   background-color: #3a3a3b; 
 }
 
+.correct-position {
+  color: green;
+}
 
+.correct-letter {
+  color: yellow;
+}
 
