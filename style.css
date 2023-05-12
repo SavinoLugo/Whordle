@@ -9,56 +9,54 @@ body {
   flex-direction: column;
   background-color: #121214;
   justify-content: center;
+  align-items: center;
 }
 
-a.game {
+.container {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+a.game,
+a.facts {
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
   font-size: 75px;
   text-decoration: none;
   color: rgb(60, 83, 255);
   font-family: 'Architects Daughter', cursive;
-}
-a.facts {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 20px;
-  font-size: 75px;
-  text-decoration: none;
-  color: rgb(60, 83, 255);
-  font-family: 'Kalam', cursive;
+  max-width: 100%;
+  text-align: center;
 }
 
-p {
-  color: white;
-  position: center;
+p,
+h1,
+h2,
+h3 {
+  color: rgb(78, 186, 48);
   text-align: center;
-  margin-left: 300px;
-  margin-right: 300px;
   font-size: 30px;
+  max-width: 100%;
+  margin: 20px 0;
 }
-h1{
+
+h1 {
   color: rgb(255, 255, 255);
-  text-align: center;
   margin-bottom: -25px;
 }
-h2{
+
+h2,
+h3 {
   color: rgb(182, 70, 70);
-  text-align: center;
-  margin-left: 300px;
-  margin-right: 300px;
   font-size: 30px;
   margin-bottom: -20px;
-}
-h3{
-  color: rgb(182, 70, 70);
-  text-align: center;
-  margin-left: 350px;
-  margin-right: 350px;
-  font-size: 25px;
 }
 
 header {
@@ -68,10 +66,8 @@ header {
   color: rgb(0, 183, 255);
   letter-spacing: 1vmin;
   font-family: 'Bruno Ace SC', cursive;
-  margin-top: -275px;
-  margin-bottom: 30px;
+  max-width: 100%;
 }
-
 
 section.gameboard {
   display: grid;
@@ -79,6 +75,7 @@ section.gameboard {
   grid-template-rows: repeat(6, 48px);
   justify-content: center;
   gap: 5px;
+  max-width: 100%;
 }
 
 section.gameboard > div {
@@ -88,13 +85,14 @@ section.gameboard > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3a3a3b; 
+  background-color: #3a3a3b;
 }
 
 .correct-position {
   color: green;
 }
-button{
+
+button {
   height: 50px;
   width: 250px;
   margin-top: 4vmin;
@@ -112,5 +110,4 @@ button{
 button:hover {
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.365);
-  
 }
