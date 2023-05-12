@@ -121,6 +121,19 @@ const checkIfCorrect = () => {
   return guess === wordToGuess
 }
 
+const resetGame = () => {
+  currentRow = 0
+  currentCellIndex = 0
+  currentGuess = []
+  banana = 0
+  guesses.length = 0
+  wordToGuess = getRandomWord()
+  createGameBoard()
+}
+
+const playAgainButton = document.querySelector('.play-again-button')
+playAgainButton.addEventListener('click', resetGame)
+
 wordToGuess = getRandomWord()
 
 document.addEventListener('keydown', handleKeyDown)
