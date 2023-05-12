@@ -65,10 +65,6 @@ const checkWin = () => {
   const gameboard = document.querySelectorAll('.cell')
   newArr.forEach((word, idx) => {
     const fWord = word.toUpperCase()
-    console.log(fWord)
-    console.log(
-      gameboard[currentGuess.length - 1 + banana].textContent === fWord
-    )
     if (gameboard[idx + banana].textContent === fWord) {
       gameboard[idx + banana].style.background = 'green'
     }
@@ -104,19 +100,13 @@ const handleKeyDown = (event) => {
 const moveToNextRow = () => {
   guesses.push(currentGuess)
   const isWin = checkIfCorrect()
-  if (isWin) {
-    console.log('Correct')
-  } else {
-    console.log('incorrect')
-  }
-  currentCellIndex = 0
+  if (isWin) currentCellIndex = 0
   currentRow++
   banana += 5
   if (currentRow >= rowCount) {
     currentRow = 0
   }
   currentGuess = []
-  // updateCells()
 }
 
 const handleEnterKeyPress = (event) => {
