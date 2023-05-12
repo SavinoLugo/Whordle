@@ -10,8 +10,13 @@ Created by: Savino Lugo
 
 A web browser word guessing game based off of The NYTime's game "_Wordle_".
 In this game you have six tries to guess the corret word.
+In the original version of the game you would get two hints, one is that a correct letter in the correct space turns green. The second is that a correct letter in the wrong space turns yellow.
+Each day there is only one wordle.
 The words are only five letters long.
+
+My version of the game is different
 The only hints are that correct letters turn green.
+You can do as many wordles as you want by hitting the play again button.
 
 ---
 
